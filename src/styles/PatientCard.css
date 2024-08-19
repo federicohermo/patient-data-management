@@ -192,3 +192,20 @@ button.dark-mode:hover {
 .arrow.down {
   margin-left: 8px;
 }
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  button {
+    padding: 4px 6px;
+  }
+  button.dark-mode {
+    padding: 4px 6px;
+  }
+  a {
+    font-size: 0.75rem;
+    display: table-caption
+  }
+  .patientCard {
+    font-size: 0.75rem;
+  }
+}

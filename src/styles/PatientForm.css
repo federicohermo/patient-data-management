@@ -113,4 +113,32 @@
     color: var(--light_blue_button);
     border: none;
   }
+
+  @media (max-width: 768px) {
+    .formGroup label {
+      font-size: 0.75rem;
+    }
+
+    .formGroup input {
+      font-size: 0.75rem;
+      padding: 4px;
+    }
+
+    .submitButton {
+      font-size: 0.75rem;
+    }
+
+    .cancelButton{
+      font-size: 0.75rem;
+    }
+
+    .addFieldButton {
+      max-width: 15vw;
+      font-size: 0.75rem;
+    }
+
+    .closeButton {
+      font-size: 0.75rem;
+    }
+  }
   

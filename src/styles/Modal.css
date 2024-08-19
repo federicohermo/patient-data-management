@@ -60,4 +60,17 @@
     color: var(--blue_button_hover);
     border-color: var(--blue_button_hover);
 }
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .modalContent.medium {
+        width: 60%;
+    }
+    .modalContent.small {
+        width: 40%;
+    }
+    .modalContent.big {
+        width: 70%;
+    }
+}
   
