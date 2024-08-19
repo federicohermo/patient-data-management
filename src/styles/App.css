@@ -38,8 +38,7 @@
 
 .title {
   text-align: center;
-  margin-bottom: 20px;
-  margin-left: 2.5vw;
+  margin: 0 0 0 1rem; /* Adjusted for better alignment */
   font-size: 1.5rem;
   color: #333;
   transition: color 0.3s ease-in-out;
@@ -84,13 +83,13 @@
 }
 
 .darkModeToggleButton {
-  margin-right: 2.5vw;
+  margin-right: 1rem;
   border-radius: 50px;
   min-width: 1vw;
 }
 
 .darkModeIcon {
-  height: 4vh;
+  height: 24px; /* Adjust height for better visibility */
   filter: var(--blue_icon);
 }
 
@@ -106,3 +105,31 @@ button:hover .darkModeIcon.dark-mode {
   filter: var(--light_blue_icon_hover);
 }
 
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .header {
+    padding: 8px 4vw; /* Adjust padding for smaller screens */
+  }
+  
+  .title {
+    font-size: 0.5rem; /* Reduce font size on smaller screens */
+    margin: 0 5px 0 0;
+  }
+  
+  .addButton {
+    font-size: 0.5rem; /* Adjust font size on smaller screens */
+    padding: 8px 12px;
+  }
+  
+  .searchBar {
+    font-size: 0.5rem; /* Adjust font size on smaller screens */
+  }
+  
+  .darkModeIcon {
+    height: 20px; /* Adjust icon size for smaller screens */
+  }
+
+  .darkModeToggleButton {
+    min-width: 16vw;
+  }
+}
