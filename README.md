@@ -54,25 +54,19 @@ This hook manages the theme of the app, handling the logic for toggling between 
 
 1. **Clone the repository**:
    ```bash
-   ```
    git clone https://github.com/federicohermo/patient-data-management.git
    cd patient-management-system
-   ```
 
 2. **install dependencies**:
    ```bash
-   ```
    npm install
-   ```
 
 3. **Run the application**:
    ```bash
-   ```
    npm run start
-   ```
 
 1. **Access the application**:
-    ```bash
+   
    Open your browser and navigate to http://localhost:3000.
 
 ## Contributing
