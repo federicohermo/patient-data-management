@@ -54,7 +54,7 @@ This hook manages the theme of the app, handling the logic for toggling between 
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/patient-management-system.git
+   git clone https://github.com/federicohermo/patient-data-management.git
    cd patient-management-system
 
 2. **install dependencies**:
