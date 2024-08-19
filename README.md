@@ -21,7 +21,7 @@ The **Patient Management System** is a web application designed to manage patien
 - **TypeScript**: To enforce type safety throughout the app.
 - **Axios**: For making API requests.
 - **CSS/SCSS**: For styling the app, including custom animations and themes.
-- **Flaticon**: For icons used in the dark mode toggle.
+- **Icons8**: For icons used in the dark mode toggle.
 
 ## Folder Structure
 
@@ -68,3 +68,10 @@ This hook manages the theme of the app, handling the logic for toggling between 
 1. **Access the application**:
    Open your browser and navigate to http://localhost:3000.
 
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License.
