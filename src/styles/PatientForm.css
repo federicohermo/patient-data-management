@@ -1,0 +1,116 @@
+/* src/styles/PatientForm.css */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+  }
+
+.form.dark-mode {
+  background-color: #4f4f4f;
+}
+
+.formContainer {
+  overflow-y: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+  
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .formGroup label {
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
+  .formGroup.dark-mode label {
+    color: white;
+  }
+  
+  .formGroup input,
+  .formGroup textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .errorInput {
+    border-color: #ff4d4f;
+  }
+  
+  .errorMessage {
+    color: #ff4d4f;
+    font-size: 14px;
+    margin-top: 4px;
+  }
+  
+  .formActions {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .submitButton {
+    background-color: var(--blue_button);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .submitButton.dark-mode {
+    background-color: var(--light_blue_button);
+    color: #4f4f4f;
+  }
+  
+  .submitButton:hover {
+    background-color: var(--blue_button_hover);
+    color: white;
+  }
+
+  .submitButton.dark-mode:hover {
+    background-color: var(--light_blue_button_hover);
+    color: #4f4f4f;
+  }
+
+  .addFieldButton {
+    max-width: 5vw;
+  }
+  
+  .cancelButton {
+    background-color: #ccc;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .cancelButton.dark-mode {
+    background-color: #ccc;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .cancelButton:hover {
+    background-color: #999;
+  }
+
+  .cancelButton.dark-mode:hover {
+    color: var(--light_blue_button);
+    border: none;
+  }
+  

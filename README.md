@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# Patient Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+The **Patient Management System** is a web application designed to manage patient records efficiently. The app allows users to add, edit, and search for patients in a user-friendly interface. It supports dynamic form fields, dark mode, and animations for a modern user experience.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Add/Edit Patients**: Easily add new patients or edit existing records through a modal form.
+- **Dynamic Fields**: Add custom fields to the patient form dynamically.
+- **Search Functionality**: Quickly find patients using a search bar.
+- **Dark Mode**: Toggle between light and dark themes.
+- **Responsive Design**: The app is fully responsive, adapting to various screen sizes, including mobile devices.
+- **Smooth Animations**: Patient cards and buttons feature smooth animations for an enhanced user experience.
+- **Notification System**: Users are notified of actions like successful patient addition or errors.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **React**: For building the user interface.
+- **Context API**: To manage global states such as patient data and theme preferences.
+- **TypeScript**: To enforce type safety throughout the app.
+- **Axios**: For making API requests.
+- **CSS/SCSS**: For styling the app, including custom animations and themes.
+- **Flaticon**: For icons used in the dark mode toggle.
 
-### `npm test`
+## Folder Structure
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **src/components**: Contains React components like `PatientList`, `PatientCard`, `PatientForm`, `Modal`, and `Notification`.
+- **src/context**: Contains context providers (`PatientContext`, `ThemeContext`) for managing global state.
+- **src/hooks**: Custom hooks like `usePatients` and `useTheme` to encapsulate logic related to patients and theme management.
+- **src/styles**: Contains the CSS files for styling the components.
 
-### `npm run build`
+## Context API
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### PatientContext
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The `PatientContext` provides a centralized store for managing patient data across the app. It handles API calls for fetching, adding, editing, and searching patients.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### ThemeContext
 
-### `npm run eject`
+The `ThemeContext` manages the theme of the app, allowing users to toggle between light and dark modes.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Custom Hooks
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### usePatients
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+This hook encapsulates the logic related to patient management, including fetching, adding, and updating patient data.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### useTheme
 
-## Learn More
+This hook manages the theme of the app, handling the logic for toggling between light and dark modes.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## How to Use
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/your-username/patient-management-system.git
+   cd patient-management-system
 
-### Code Splitting
+2. **install dependencies**:
+   ```bash
+   npm install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+3. **Run the application**:
+   ```bash
+   npm run start
 
-### Analyzing the Bundle Size
+1. **Access the application**:
+   Open your browser and navigate to http://localhost:3000.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

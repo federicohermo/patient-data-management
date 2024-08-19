@@ -1,0 +1,63 @@
+/* src/components/Modal.module.css */
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+  
+.modalContent {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    width: 45%;
+    max-height: 75%;
+    overflow-y: auto;
+    scrollbar-color: var(--blue_button_hover) transparent;
+    scrollbar-width: thin;
+}
+
+.modalContent.dark-mode {
+    background-color: #4f4f4f;
+    scrollbar-color: var(--light_blue_button_hover) transparent;
+}
+
+.modalContent.small {
+    width: 30%
+}
+
+.modalContent.medium {
+    width: 45%
+}
+
+.modalContent.big {
+    width: 60%
+}
+
+.closeButton {
+    position: absolute;
+    top: 10px;
+    background: none;
+    color: var(--blue_button);
+    border-color: var(--blue_button);
+    border-radius: 50%;
+    font-size: 1em;
+    cursor: pointer;
+    min-width: 2.5em;
+    right: 5%;
+}
+
+.closeButton:hover {
+    background-color: var(--blue_button_transparent);
+    color: var(--blue_button_hover);
+    border-color: var(--blue_button_hover);
+}
+  

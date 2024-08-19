@@ -1,0 +1,56 @@
+.notification {
+    position: fixed; /* Position fixed to overlay the PatientList component */
+    top: 20px; /* Positioned at the top of the screen */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000; /* Ensure it overlays other components */
+    padding: 16px 24px;
+    border-radius: 8px;
+    color: white;
+    background-color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 300px;
+    max-width: 80%;
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards, fadeOut 0.5s ease 3s forwards; /* Fade in/out animations */
+  }
+  
+  .notification.success {
+    background-color: #28a745;
+  }
+  
+  .notification.error {
+    background-color: #dc3545;
+  }
+  
+  .closeButtonNotification {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 16px;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }

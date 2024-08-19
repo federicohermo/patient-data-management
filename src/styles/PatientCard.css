@@ -1,0 +1,194 @@
+/* src/styles/PatientCard.css */
+
+.patientCard {
+  border: 1px solid #ddd;
+  background-color: hwb(0 98% 2% / 0.8);
+  padding: 16px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #4f4f4f;
+  transition: box-shadow 0.3s ease-in-out;
+  min-width: 27vw;
+  min-height: 6rem;
+}
+
+.patientCard.dark-mode {
+  background-color: hwb(0 98% 2% / 0.2);
+  color: var(--almond);
+  border-color: hsla(0, 0%, 87%, 0.3);
+}
+
+.patientCard:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.patientFooter {
+  margin-top: 5vh;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
+
+.basicInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.basicInfo h3 {
+  margin: 0;
+}
+
+.detailedInfo {
+  margin-top: 8px;
+}
+
+.expandButton {
+  background: none;
+  border: 2px solid var(--lime_button_transparent);
+  color: var(--lime_button_transparent);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.expandButton.dark-mode {
+  border: 2px solid var(--light_lime_button_transparent);
+  color: var(--light_lime_button_transparent);
+}
+
+.expandButton.hide {
+  border: 2px solid var(--lime_button);
+  color: var(--lime_button);
+}
+
+.expandButton.hide.dark-mode {
+  border: 2px solid var(--light_lime_button);
+  color: var(--light_lime_button);
+}
+
+.expandButton:hover {
+  background-color: var(--lime_button_hover);
+  border-color: var(--lime_button);
+  color: var(--lime_button);
+}
+
+.expandButton.dark-mode:hover {
+  border-color: var(--light_lime_button);
+  color: var(--light_lime_button);
+  background-color: var(--lime_button_hover);
+}
+
+.readMoreButton {
+    background: none;
+    border: 2px solid var(--lime_button);
+    color: var(--lime_button);
+    transition: background-color 0.3s ease-in-out;
+}
+
+.readMoreButton.dark-mode {
+    border: 2px solid var(--light_lime_button);
+    color: var(--light_lime_button);
+}
+
+.readMoreButton:hover {
+    background-color: var(--lime_button_hover);
+    color: var(--lime_button);
+    border-color: var(--lime_button);
+}
+
+.readMoreButton.dark-mode:hover {
+  color: var(--light_lime_button);
+  border-color: var(--light_lime_button);
+  background-color: var(--lime_button_hover);
+}
+
+a {
+  text-decoration: none;
+  color: var(--blue_button);
+}
+
+a.dark-mode {
+  color: var(--light_blue_button)
+}
+
+a:hover {
+  color: var(--blue_button_hover);
+}
+
+a.dark-mode:hover {
+  color: var(--light_blue_button_hover)
+}
+
+/* Media query for medium screens (e.g., laptops) */
+@media (min-width: 768px) and (max-width: 940px) {
+    a {
+        display: table-caption;
+    }   
+}
+
+button {
+  background: none;
+  color: var(--blue_button);
+  border: 2px solid var(--blue_button);
+  padding: 8px 12px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  min-width: 7.5vw;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: var(--blue_button_transparent);
+  color: var(--blue_button_hover);
+  border-color: var(--blue_button_hover);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+button.dark-mode {
+  color: var(--light_blue_button);
+  border: 2px solid var(--light_blue_button);
+}
+
+button.dark-mode:hover {
+  color: var(--light_blue_button_hover);
+  border: 2px solid var(--light_blue_button_hover);
+  background-color: var(--light_blue_button_transparent);
+}
+
+.patientDetails {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.patientDetails.expanded {
+    max-height: 500px; /* Ensure this value is enough to show content */
+    opacity: 1;
+}
+
+.arrow {
+  display: inline-block;
+  filter: invert(45%) sepia(89%) saturate(2366%) hue-rotate(68deg) brightness(91%) contrast(101%);
+  opacity: 0.5;
+  transition: transform 0.3s ease-in-out;
+}
+
+.expandButton:hover .arrow {
+  filter: invert(45%) sepia(89%) saturate(2366%) hue-rotate(68deg) brightness(91%) contrast(101%);
+  opacity: 1;
+}
+
+.arrow.up {
+  margin-left: 8px;
+}
+
+.arrow.down {
+  margin-left: 8px;
+}
