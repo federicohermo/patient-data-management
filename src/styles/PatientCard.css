@@ -198,13 +198,16 @@ button.dark-mode:hover {
   button {
     padding: 4px 6px;
   }
+
   button.dark-mode {
     padding: 4px 6px;
   }
+
   a {
     font-size: 0.75rem;
     display: table-caption
   }
+  
   .patientCard {
     font-size: 0.75rem;
   }
