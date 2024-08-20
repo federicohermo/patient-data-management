@@ -10,7 +10,7 @@
   color: #4f4f4f;
   transition: box-shadow 0.3s ease-in-out;
   min-width: 27vw;
-  min-height: 6rem;
+  min-height: 14rem;
 }
 
 .patientCard.dark-mode {

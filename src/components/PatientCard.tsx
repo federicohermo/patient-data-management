@@ -61,9 +61,9 @@ const PatientCard: React.FC<PatientCardProps> = ({ patient, onEdit, className, d
         {Object.keys(patient).map((key) => {
           return(<>
             {
-              (key !== "avatar" && key !== "createdAt" && key !== "website" && key !== "name") ? 
+              (key !== "avatar" && key !== "createdAt" && key !== "website" && key !== "name" && patient[key] !== '') ? 
               <>
-              <p><b>{key.charAt(0).toUpperCase() + key.slice(1)}</b> <br /> {getShortDescription(patient[key])}</p>
+              <p><b>{key.charAt(0).toUpperCase() + key.slice(1)}:</b> {getShortDescription(patient[key])}</p>
               {patient[key].length > 200 && (
                 <button className={`readMoreButton ${darkMode ? 'dark-mode' : ''}`} onClick={toggleDescription}>
                   {isDescriptionExpanded ? "Read less" : "Read more"}

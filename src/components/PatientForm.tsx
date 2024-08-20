@@ -18,6 +18,7 @@ const PatientForm: React.FC<PatientFormProps> = ({ initialData, onSubmit, onCanc
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [newFieldName, setNewFieldName] = useState('');
+  const [modalError,setModalError] = useState<string | null>(null);
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -35,12 +36,17 @@ const PatientForm: React.FC<PatientFormProps> = ({ initialData, onSubmit, onCanc
     setIsModalOpen(true);
   };
 
-  const handleModalSubmit = () => {
-    if (newFieldName) {
-      setAdditionalFields({ ...additionalFields, [newFieldName]: '' });
+  const handleModalSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault(); // Prevent form submission
+
+    if (newFieldName.trim() === '') {
+      setModalError('Field Name is required');
+      return;
     }
+    setAdditionalFields({ ...additionalFields, [newFieldName]: '' });
     setIsModalOpen(false);
     setNewFieldName('');
+    setModalError(null);
   };
 
   const validateForm = () => {
@@ -49,11 +55,14 @@ const PatientForm: React.FC<PatientFormProps> = ({ initialData, onSubmit, onCanc
     if (!formData.id) newErrors.id = 'Valid id is required';
     if (!formData.website) newErrors.website = 'Website URL is required';
     if (!formData.description) newErrors.description = 'Description is required';
+    initialData && Object.keys(initialData).map((key) => {
+      if (!formData[key].trim()) newErrors[key] = key.charAt(0).toUpperCase() + key.slice(1) + ' is required';
+    })
     return newErrors;
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    e.preventDefault(); // Prevent form submission
 
     const validationErrors = validateForm();
     setErrors(validationErrors);
@@ -80,9 +89,9 @@ const PatientForm: React.FC<PatientFormProps> = ({ initialData, onSubmit, onCanc
               name={key}
               value={formData[key]}
               onChange={handleInputChange}
-              className={errors.key ? "errorInput" : ''}
+              className={errors[key] ? "errorInput" : ''}
             />
-            {errors.key && <p className="errorMessage">{errors.key}</p>}
+            {errors[key] && <p className="errorMessage">{errors[key]}</p>}
           </div>
         )
       })
@@ -144,7 +153,7 @@ const PatientForm: React.FC<PatientFormProps> = ({ initialData, onSubmit, onCanc
       {Object.keys(additionalFields).map((fieldName) => (
         <div className={`formGroup ${darkMode ? 'dark-mode' : ''}`}>
         <label htmlFor={fieldName}>{fieldName.charAt(0).toUpperCase() + fieldName.slice(1)}:</label>
-        <textarea
+        <input
           id={fieldName}
           name={fieldName}
           value={formData.fieldName}
@@ -174,10 +183,12 @@ const PatientForm: React.FC<PatientFormProps> = ({ initialData, onSubmit, onCanc
               id="newField"
               value={newFieldName}
               onChange={(e) => setNewFieldName(e.target.value)}
+              className={modalError ? "errorInput" : ''}
             />
+            {modalError && <p className='errorMessage'>{modalError}</p>}
           </div>
           <div className={`formActions ${darkMode ? 'dark-mode' : ''}`}>
-            <button className={`submitButton ${darkMode ? 'dark-mode' : ''}`} onClick={handleModalSubmit}>+</button>
+            <button type="button" className={`submitButton ${darkMode ? 'dark-mode' : ''}`} onClick={handleModalSubmit}>+</button>
           </div>
         </div>
       </Modal>
