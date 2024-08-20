@@ -57,7 +57,7 @@ const PatientForm: React.FC<PatientFormProps> = ({ initialData, onSubmit, onCanc
     if (!formData.description) newErrors.description = 'Description is required';
     initialData && Object.keys(initialData).map((key) => {
       if (!formData[key].trim()) newErrors[key] = key.charAt(0).toUpperCase() + key.slice(1) + ' is required';
-      return newErrors
+      return newErrors;
     })
     return newErrors;
   };
