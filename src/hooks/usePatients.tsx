@@ -1,7 +1,7 @@
 // src/hooks/usePatients.tsx
 
 import { useContext } from 'react';
-import { PatientContext } from '../context/PatientContext.tsx';
+import { PatientContext } from '../context/PatientContext';
 
 export const usePatients = () => {
   const context = useContext(PatientContext);

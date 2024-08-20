@@ -1,8 +1,8 @@
 // src/components/PatientList.tsx
 
 import React, { useState, useEffect } from 'react';
-import PatientCard from './PatientCard.tsx';
-import {Patient} from '../context/PatientContext.tsx';
+import PatientCard from './PatientCard';
+import {Patient} from '../context/PatientContext';
 import '../styles/PatientList.css';
 
 interface PatientListProps {

@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Patient } from '../context/PatientContext.tsx';
+import { Patient } from '../context/PatientContext';
 import '../styles/PatientCard.css'; // Assuming CSS Modules for styling
 
 interface PatientCardProps {

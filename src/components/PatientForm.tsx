@@ -1,8 +1,8 @@
 // src/components/PatientForm.tsx
 
 import React, { useState, ChangeEvent} from 'react';
-import { Patient } from '../context/PatientContext.tsx';
-import Modal from "./Modal.tsx"
+import { Patient } from '../context/PatientContext';
+import Modal from "./Modal"
 import '../styles/PatientForm.css';
 
 interface PatientFormProps {

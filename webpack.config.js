@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.tsx', // Your entry point file
+  entry: './src/index.js', // Your entry point file
   output: {
     path: path.resolve(__dirname, 'dist'), // Output directory
     filename: 'bundle.js', // Output file name
@@ -16,6 +16,9 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader', // Use Babel for transpiling
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react', "@babel/preset-typescript"]
+          }
         },
       },
       {
@@ -29,10 +32,11 @@ module.exports = {
     ],
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist'), // Serve content from 'dist'
+    static: {
+      directory: path.join(__dirname, 'dist'), // Use 'static' instead of 'contentBase'
+    },
     compress: true,
-    port: 3000, // Port number
-    hot: true, // Enable Hot Module Replacement
+    port: 9000,
   },
   devtool: 'source-map', // Enable source maps for debugging
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',

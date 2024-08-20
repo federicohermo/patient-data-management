@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+      "target": "es6",                        // Set the ECMAScript target version
+      "module": "commonjs",                   // Specify the module code generation
+      "jsx": "react",                         // Enable JSX for React
+      "strict": true,                         // Enable strict type-checking options
+      "esModuleInterop": true,                // Enables emit interoperability between CommonJS and ES Modules
+      "skipLibCheck": true,                   // Skip type checking of all declaration files
+      "forceConsistentCasingInFileNames": true, // Disallow inconsistently-cased references to the same file.
+      "outDir": "./dist",                     // Redirect output structure to the directory
+      "moduleResolution": "node",             // Use Node.js module resolution strategy
+      "resolveJsonModule": true,              // Allows importing .json files
+      "isolatedModules": true,                // Ensure every file can be safely transpiled without relying on other imports
+      "noEmit": true,                          // Don't emit compiled output, only check types
+    },
+    "include": ["src"],                       // Specify the root files or folders
+    "exclude": ["node_modules", "dist"]       // Exclude node_modules and dist directories
+  }
+  

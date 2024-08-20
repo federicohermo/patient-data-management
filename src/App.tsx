@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
-import PatientList from './components/PatientList.tsx';
-import PatientForm from './components/PatientForm.tsx';
-import Modal from './components/Modal.tsx';
-import Notification from './components/Notification.tsx';
-import Loading from './components/Loading.tsx';
-import { ThemeProvider } from './context/ThemeContext.tsx';
-import { useTheme } from './hooks/useTheme.tsx';
-import { PatientProvider, Patient } from './context/PatientContext.tsx';
-import { usePatients } from './hooks/usePatients.tsx';
+import PatientList from './components/PatientList';
+import PatientForm from './components/PatientForm';
+import Modal from './components/Modal';
+import Notification from './components/Notification';
+import Loading from './components/Loading';
+import { ThemeProvider } from './context/ThemeContext';
+import { useTheme } from './hooks/useTheme';
+import { PatientProvider, Patient } from './context/PatientContext';
+import { usePatients } from './hooks/usePatients';
 import './styles/App.css';
 
-const AppContent: React.FC = () => {
+function AppContent() {
   const { patients, addPatient, editPatient } = usePatients();
   const { isDarkMode, toggleTheme } = useTheme();
 
   const [selectedPatient, setSelectedPatient] = useState<Patient | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [notification, setNotification] = useState<{ message: string; type: string } | null>(null);
+  const [notification, setNotification] = useState<{ message: string, type: string } | null>(null);
   const [loading, setLoading] = useState(false);
   const [loadingMessage, setLoadingMessage] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
@@ -113,14 +113,16 @@ const AppContent: React.FC = () => {
       )}
     </div>
   );
-};
+}
 
-const App: React.FC = () => (
-  <ThemeProvider>
-    <PatientProvider>
-      <AppContent />
-    </PatientProvider>
-  </ThemeProvider>
-);
+function App() {
+  return (
+    <ThemeProvider>
+      <PatientProvider>
+        <AppContent />
+      </PatientProvider>
+    </ThemeProvider>
+  );
+}
 
 export default App;
