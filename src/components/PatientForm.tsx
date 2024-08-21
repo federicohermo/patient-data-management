@@ -59,6 +59,10 @@ const PatientForm: React.FC<PatientFormProps> = ({ initialData, onSubmit, onCanc
       if (!formData[key].trim()) newErrors[key] = key.charAt(0).toUpperCase() + key.slice(1) + ' is required';
       return newErrors;
     })
+    additionalFields && Object.keys(additionalFields).map((key) => {
+      if (!additionalFields[key].trim()) newErrors[key] = key.charAt(0).toUpperCase() + key.slice(1) + ' is required';
+      return newErrors;
+    })
     return newErrors;
   };
 
@@ -157,11 +161,11 @@ const PatientForm: React.FC<PatientFormProps> = ({ initialData, onSubmit, onCanc
         <input
           id={fieldName}
           name={fieldName}
-          value={formData.fieldName}
+          value={formData[fieldName]}
           onChange={handleAdditionalFieldChange}
-          className={errors.fieldName ? "errorInput" : ''}
+          className={errors[fieldName] ? "errorInput" : ''}
         />
-        {errors.fieldName && <p className="errorMessage">{errors.fieldName}</p>}
+        {errors[fieldName] && <p className="errorMessage">{errors[fieldName]}</p>}
         </div>
       ))}
       {initialData ? 
